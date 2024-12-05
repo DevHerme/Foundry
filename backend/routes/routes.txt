@@ -1,0 +1,5 @@
+User routes:
+Get users post POST register get USERS profile
+
+Application Routes:
+App data and actions
