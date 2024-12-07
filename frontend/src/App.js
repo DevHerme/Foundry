@@ -12,7 +12,11 @@ const Counter = () => {
 
   return (
     <div>
+<<<<<<< HEAD
       <button onClick={handleClick}> asdfTesting</button>
+=======
+      <button onClick={handleClick}>asasdfsdfasdf</button>
+>>>>>>> beta
       <p>Count: {count}</p>
     </div>
   );
@@ -20,13 +24,13 @@ const Counter = () => {
 
 const StaticMessage = () => {
   console.log('StaticMessage component re-rendered'); // Logs every time this re-renders
-  return <p>This message doesn’t change!</p>;
+  return <p>This  doesn’t change!</p>;
 };
 
 const App = () => {
   return (
     <div>
-      <h1>React Re-rendering Example</h1>
+      <h1>React Re-rendasdfering TestExample</h1>
       <Counter />
       <StaticMessage />
       <Message />
