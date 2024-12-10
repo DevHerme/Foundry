@@ -1,41 +1,57 @@
-import React, { useState } from 'react';
-import Message from './Components/Message';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
+import DashboardPage from './pages/DashboardPage';
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
+function App() {
+    // Retrieve token from localStorage on app load
+    const [token, setToken] = useState(localStorage.getItem('token') || null);
 
-  const handleClick = () => {
-    setCount(count + 1); // Updates state, triggers re-render
-  };
+    useEffect(() => {
+        const storedToken = localStorage.getItem('token');
+        if (storedToken) {
+            setToken(storedToken);
+        }
+    }, []);
 
-  console.log('Counter component re-rendered'); // Logs every re-render
+    const handleLogin = (newToken) => {
+        localStorage.setItem('token', newToken); // Save token
+        setToken(newToken);
+    };
 
-  return (
-    <div>
-<<<<<<< HEAD
-      <button onClick={handleClick}> asdfTesting</button>
-=======
-      <button onClick={handleClick}>asasdfsdfasdf</button>
->>>>>>> beta
-      <p>Count: {count}</p>
-    </div>
-  );
-};
+    const handleLogout = () => {
+        localStorage.removeItem('token'); // Remove token
+        setToken(null);
+    };
 
-const StaticMessage = () => {
-  console.log('StaticMessage component re-rendered'); // Logs every time this re-renders
-  return <p>This  doesn’t change!</p>;
-};
+    // PrivateRoute to protect pages
+    const PrivateRoute = ({ children }) => {
+        return token ? children : <Navigate to="/login" />;
+    };
 
-const App = () => {
-  return (
-    <div>
-      <h1>React Re-rendasdfering TestExample</h1>
-      <Counter />
-      <StaticMessage />
-      <Message />
-    </div>
-  );
-};
+    return (
+        <Router>
+            <Routes>
+                {/* Public Routes */}
+                <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
+                <Route path="/signup" element={<SignupPage />} />
+
+                {/* Protected Route */}
+                <Route
+                    path="/dashboard"
+                    element={
+                        <PrivateRoute>
+                            <DashboardPage onLogout={handleLogout} />
+                        </PrivateRoute>
+                    }
+                />
+
+                {/* Fallback Route */}
+                <Route path="*" element={<Navigate to={token ? "/dashboard" : "/login"} />} />
+            </Routes>
+        </Router>
+    );
+}
 
 export default App;
