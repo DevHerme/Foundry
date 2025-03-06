@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useBaseUrl from '../hooks/useBaseUrl'; // Adjust the path if needed
 
 function SignupPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]); // Array of errors
+
+    const baseUrl = useBaseUrl();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -12,7 +15,7 @@ function SignupPage() {
         setErrors([]); // Clear previous errors
 
         try {
-            const response = await fetch(process.env.REACT_APP_BACKEND_URL + '/register', {
+            const response = await fetch(baseUrl + '/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),

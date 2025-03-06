@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import useBaseUrl from '../hooks/useBaseUrl'; // Adjust the path if needed
 
 function LoginPage({ onLogin }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState(''); // State for error message
 
+    const baseUrl = useBaseUrl();
     const navigate = useNavigate(); // Initialize useNavigate
 
     const handleSubmit = async (e) => {
@@ -13,9 +15,9 @@ function LoginPage({ onLogin }) {
         setErrorMessage(''); // Clear previous errors
     
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/login`, {
+            const response = await fetch(baseUrl+'/login', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', 'testing' : 'test' },
                 body: JSON.stringify({ email, password }),
             });
     
