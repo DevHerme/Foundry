@@ -9,7 +9,10 @@ const app = express();
 
 // Middleware
 app.use(morgan('dev'));
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:3000",  // Allow frontend to call backend
+    credentials: true
+}));
 app.use(express.json());
 
 // Register API routes
@@ -32,6 +35,6 @@ app.use((err, req, res, next) => {
 
 // Start the server
 const port = process.env.PORT || 3001;
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Server running on http://localhost:${port}`);
 });
