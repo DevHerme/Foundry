@@ -7,6 +7,9 @@ require('dotenv').config();
 
 const app = express();
 
+// Import your webhook routes
+const webhookRoutes = require('./routes/webhookRoutes'); 
+
 // Middleware
 app.use(morgan('dev'));
 app.use(cors({
@@ -17,6 +20,9 @@ app.use(express.json());
 
 // Register API routes
 app.use('/api', authRoutes);
+
+// Mount your webhook routes
+app.use('/webhook', webhookRoutes); 
 
 // Serve React frontend if build exists
 const frontendPath = path.join(__dirname, '../frontend/build');
