@@ -24,14 +24,14 @@ app.use('/api', authRoutes);
 // Mount your webhook routes
 app.use('/webhook', webhookRoutes); 
 
-// Serve React frontend if build exists
-const frontendPath = path.join(__dirname, '../frontend/build');
-if (require('fs').existsSync(frontendPath)) {
-    app.use(express.static(frontendPath));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(frontendPath, 'index.html'));
-    });
-}
+// // Serve React frontend if build exists
+// const frontendPath = path.join(__dirname, '../frontend/build');
+// if (require('fs').existsSync(frontendPath)) {
+//     app.use(express.static(frontendPath));
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.join(frontendPath, 'index.html'));
+//     });
+// }
 
 // Error handling middleware
 app.use((err, req, res, next) => {
