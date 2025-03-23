@@ -2,45 +2,46 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
-const authRoutes = require('./routes/authRoutes'); // Import your routes
+const authRoutes = require('./routes/authRoutes');
+const webhookRoutes = require('./routes/webhookRoutes');
 require('dotenv').config();
 
 const app = express();
 
-// Import your webhook routes
-const webhookRoutes = require('./routes/webhookRoutes'); 
+// CORS setup from .env
+const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 
 // Middleware
 app.use(morgan('dev'));
-app.use(cors({
-    origin: "http://localhost:3000",  // Allow frontend to call backend
-    credentials: true
-}));
 app.use(express.json());
 
-// Register API routes
+// Routes
 app.use('/api', authRoutes);
+app.use('/webhook', webhookRoutes);
 
-// Mount your webhook routes
-app.use('/webhook', webhookRoutes); 
-
-// Serve React frontend if build exists
-const frontendPath = path.join(__dirname, '../frontend/build');
-if (require('fs').existsSync(frontendPath)) {
-    app.use(express.static(frontendPath));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(frontendPath, 'index.html'));
-    });
-}
-
-// Error handling middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ error: 'Something went wrong!' });
+// Health check
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
 });
 
-// Start the server
+// Error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
+});
+
+// Start server
 const port = process.env.PORT || 3001;
 app.listen(port, '0.0.0.0', () => {
-    console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });
