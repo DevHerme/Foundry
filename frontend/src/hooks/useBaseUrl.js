@@ -7,7 +7,7 @@ const useBaseUrl = () => {
   useEffect(() => {
     const determineBaseUrl = () => {
       if (window.location.hostname === "localhost") {
-        setBaseUrl("http://localhost/api"); // Or your local backend URL
+        setBaseUrl("http://localhost:3001/api"); // Or your local backend URL
       } else {
         setBaseUrl(process.env.REACT_APP_BACKEND_URL); // Use the .env variable
       }
