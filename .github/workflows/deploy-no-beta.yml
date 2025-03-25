@@ -23,4 +23,5 @@ jobs:
           ssh -o StrictHostKeyChecking=no hermadmin@andyhermanson.com << 'EOF'
             cd /srv/andyhermanson.com/scripts
             bash ./deploy-no-beta.sh
+            exit
           EOF
