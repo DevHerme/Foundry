@@ -18,9 +18,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
 
-      - name: 🚀 Deploy to Server
+      - name: 🐳 Deploy to Server
         run: |
-          ssh -o StrictHostKeyChecking=no hermadmin@andyhermanson.com '
-            cd /srv/andyhermanson.com/scripts &&
-            bash deploy-no-beta.sh
-          '
+          ssh -o StrictHostKeyChecking=no hermadmin@andyhermanson.com << 'EOF'
+            cd /srv/andyhermanson.com/scripts
+            bash ./deploy-no-beta.sh
+          EOF
