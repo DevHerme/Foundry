@@ -1,10 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const path = require('path');
-const authRoutes = require('./routes/authRoutes');
-const webhookRoutes = require('./routes/webhookRoutes');
 require('dotenv').config();
+
+const apiRoutes = require('./routes/routes');
 
 const app = express();
 
@@ -26,8 +25,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
-app.use('/api', authRoutes);
-app.use('/webhook', webhookRoutes);
+app.use('/api', apiRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
