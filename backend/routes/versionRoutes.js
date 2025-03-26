@@ -1,16 +1,21 @@
+// backend/routes/versionRoutes.js
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
 
-const versionPath = path.resolve(__dirname, '../../version.txt');
-const stackPath = path.resolve(__dirname, '../../stack.txt');
-
-const version = fs.existsSync(versionPath) ? fs.readFileSync(versionPath, 'utf8').trim() : 'unknown';
-const stack = fs.existsSync(stackPath) ? fs.readFileSync(stackPath, 'utf8').trim() : 'unknown';
-
 router.get('/version', (req, res) => {
-  res.status(200).json({ version, stack });
+  const versionPath = path.join(__dirname, '..', 'version.txt');
+  const stackPath = path.join(__dirname, '..', 'stack.txt');
+
+  try {
+    const version = fs.readFileSync(versionPath, 'utf8').trim();
+    const stack = fs.readFileSync(stackPath, 'utf8').trim();
+    res.json({ version, stack });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Unable to read version or stack file' });
+  }
 });
 
 module.exports = router;

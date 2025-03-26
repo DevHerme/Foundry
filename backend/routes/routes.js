@@ -8,5 +8,6 @@ const versionRoutes = require('./versionRoutes');
 router.use('/auth', authRoutes);
 router.use('/webhook', webhookRoutes);
 router.use('/', versionRoutes);
+router.use('/api', versionRoutes);
 
 module.exports = router;
