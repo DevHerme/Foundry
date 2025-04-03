@@ -7,6 +7,7 @@
 *.env
 frontend/.env
 backend/.env
+liquibase/liquibase.properties
 
 # Local-only files
 frontend/start-local.js

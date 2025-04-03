@@ -1,0 +1,195 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="Andy (generated)" id="1743657484921-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743657484921-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743657484921-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743657484921-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743657619460-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743657619460-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743657619460-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743657619460-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702133581-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702133581-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702133581-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702133581-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702177747-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702177747-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702177747-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702177747-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702299598-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702299598-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702299598-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743702299598-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743703005649-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743703005649-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743703005649-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743703005649-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704359556-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704359556-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704359556-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704359556-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704372243-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704372243-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704372243-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704372243-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704395484-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704395484-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704395484-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704395484-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704749256-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704749256-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704749256-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743704749256-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707273020-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707273020-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707273020-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707273020-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707285004-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707285004-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707285004-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707285004-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707415223-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707415223-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707415223-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707415223-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707574971-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707574971-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707574971-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707574971-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707628335-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707628335-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707628335-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707628335-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707652748-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707652748-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707652748-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743707652748-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+</databaseChangeLog>
