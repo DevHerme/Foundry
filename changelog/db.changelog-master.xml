@@ -192,4 +192,28 @@
     <changeSet author="Andy (generated)" id="1743707652748-4">
         <dropTable tableName="users"/>
     </changeSet>
+    <changeSet author="Andy (generated)" id="1743792237493-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743792237493-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743792237493-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743792237493-4">
+        <dropTable tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743797941331-1">
+        <dropForeignKeyConstraint baseTableName="trades" constraintName="trades_user_id_fkey"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743797941331-2">
+        <dropUniqueConstraint constraintName="users_email_key" tableName="users"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743797941331-3">
+        <dropTable tableName="trades"/>
+    </changeSet>
+    <changeSet author="Andy (generated)" id="1743797941331-4">
+        <dropTable tableName="users"/>
+    </changeSet>
 </databaseChangeLog>
