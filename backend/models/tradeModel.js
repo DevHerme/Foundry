@@ -1,4 +1,4 @@
-const pool = require('./path/to/pool');
+const pool = require('../config/pool');
 
 const TradeModel = {
   getAllTrades: async () => {
