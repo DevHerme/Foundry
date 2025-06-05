@@ -5,9 +5,11 @@ function authenticateToken(req, res, next) {
 
     if (!token) return res.sendStatus(401);
 
-    jwt.verify(token, 'your_jwt_secret', (err, decoded) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) return res.sendStatus(403); // Invalid token
         req.userId = decoded.userId; // Attach userId to request
         next();
     });
 }
+
+module.exports = authenticateToken;
